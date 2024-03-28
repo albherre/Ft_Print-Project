@@ -19,7 +19,8 @@ COMPILER	= $(CC) $(CFLAGS)
 
 LIB		= ft_printf.h
 
-SRCS		= printf.c
+SRCS		=	printf.c \
+				main.c
 
 OBJS		= $(SRCS:.c=.o)
 
