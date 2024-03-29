@@ -9,6 +9,7 @@
 #    Updated: 2024/03/26 13:08:09 by albherre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 NAME		= libftprintf.a
 
 CC		= gcc
@@ -19,8 +20,7 @@ COMPILER	= $(CC) $(CFLAGS)
 
 LIB		= ft_printf.h
 
-SRCS		=	printf.c \
-				main.c
+SRCS		=	test.c
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -33,6 +33,10 @@ RM		= rm -f
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJS)
+
+test:
+	$(COMPILER) $(SRCS)
+	./a.out
 
 clean:
 	$(RM) $(OBJS)
