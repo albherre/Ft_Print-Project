@@ -23,6 +23,11 @@
 // Buffer of buffer_size, 4096 bytes
 #define Buff_SIZE	(1<<12)
 
+typedef enum
+{
+	OK
+}
+
 /*
 struct bool format
 [+-' '0#][width][.precision]
