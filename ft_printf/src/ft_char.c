@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_char.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albherre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 18:25:25 by albherre          #+#    #+#             */
-/*   Updated: 2024/03/28 18:25:29 by albherre         ###   ########.fr       */
+/*   Created: 2024/04/16 08:04:03 by albherre          #+#    #+#             */
+/*   Updated: 2024/04/16 08:04:05 by albherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdarg.h>
+#include "../includes/ft_printf.h"
 
-int	init_data(t_data *data, const char *format)
+int	ft_putchar(char c)
 {
-	data->chars_written = 0;
-	data->s = format;
-	data->buff = malloc(Buff_SIZE *sizeof(char));
-	if (NULL == data->buff)
-}
-
-int	ft_printf(const char *format, ...)
-{
-	t_data	data;
-
-	//start variadic functions
-	va_start(data.arg_ptr, format);
-	if (init_data(&data, format))
-		return -1;
-	while (*)
-	{
-		/* code */
-	}
+	write(1, &c, 1);
+	return (1);
 }

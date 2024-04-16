@@ -10,33 +10,29 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libftprintf.a
+# Standard
+NAME		=	libftprintf.a
+CC			=	gcc
+INC			=	Includes
+CFLAGS		=	-Wall -Werror -Wextra -I$(INC)
+COMPILER	=	$(CC) $(CFLAGS)
+AR			=	ar rcs
+RM			=	rm -f
 
-CC		= gcc
+# Sources
+SRCS		= 	$(wildcard src/*.c)
+OBJS		=	$(SRCS:.c=.o)
+LIBFT		=	libft
 
-CFLAGS		= -Wall -Werror -Wextra
-
-COMPILER	= $(CC) $(CFLAGS)
-
-LIB		= ft_printf.h
-
-SRCS		=	test.c
-
-OBJS		= $(SRCS:.c=.o)
-
-AR		= ar rcs
-
-RM		= rm -f
-
-%.o: %.c $(LIB)
+# Rules
+%.o: %.c
 	$(COMPILER) -c $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-test:
-	$(COMPILER) $(SRCS)
-	./a.out
+# Commands
+all: $(NAME)
 
 clean:
 	$(RM) $(OBJS)
