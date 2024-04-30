@@ -40,4 +40,15 @@ char	*ft_uitoa(unsigned int n);
 /* utilities.c */
 int		ft_getlength(long num);
 
+// Tests
+void    tests_c(void);
+void    tests_s(void);
+void    tests_p(void);
+void    tests_d(void);
+void    tests_u(void);
+void    tests_x(void);
+void    tests_X(void);
+void    tests_percent(void);
+int     main(void);
+
 #endif

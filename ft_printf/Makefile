@@ -21,8 +21,8 @@ RM			=	rm -f
 
 # Sources
 SRCS		= 	$(wildcard src/*.c)
-OBJS		=	$(SRCS:.c=.o)
-LIBFT		=	libft
+TESTS		=	$(wildcard test/*.c)
+OBJS		=	$(SRCS:.c=.o) $(TESTS: .c=.o)
 
 # Rules
 %.o: %.c
@@ -34,12 +34,15 @@ $(NAME): $(OBJS)
 # Commands
 all: $(NAME)
 
+tester:
+	cd printfTester && make m
+
 clean:
 	$(RM) $(OBJS)
 
-fclean:
+fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
 
-.PHONY:	clean fclean all re
+.PHONY:	clean fclean all tester re
